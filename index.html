@@ -81,7 +81,11 @@
     <div class="error" id="error-message">⚠</div>
     <div id="error-text">Сталася невідома помилка</div>
 
-   
+    <!-- Контейнер для зображення -->
+    <div class="image-container">
+        <img src="image.jpg" alt="Image">
+        <button class="mute-button" onclick="muteAudio()">🔇 Mute</button>
+    </div>
 
     <!-- Звук -->
     <audio class="audio" id="audio" src="sound.mp3" loop autoplay></audio>
@@ -124,14 +128,19 @@
                 audio.play();
             }
 
-            
-    
+            // Показати кнопку Mute після натискання
+            muteButton.style.display = 'block';
 
             // Показати лінки на канали після натискання
             linksContainer.style.display = 'block';
         });
 
-        
+        // Функція для кнопки Mute (не робоча, для краси)
+        function muteAudio() {
+            // Кнопка не має функціональності
+            // Просто змінюється текст
+            muteButton.innerText = muteButton.innerText === "🔇 Mute" ? "🔊 Unmute" : "🔇 Mute";
+        }
 
         // Запобігаємо оновленню сторінки при прокручуванні вниз
         window.addEventListener('touchmove', function(event) {
